@@ -4,6 +4,8 @@
 # But it's totally functional, which is nice.
 
 import random
+import winsound
+
 
 #the actions the player and computer have access to
 game_actions = ["rock", "paper", "scissors"]
@@ -20,7 +22,7 @@ def score(player_wins, computer_wins):
 
 #function that is called which allows the game to be replayed
 def play_again(player_wins, computer_wins):
-	print "Do you want to play again"
+	print "Do you want to play again?"
 	print "y for yes, n for no"
 	replay = raw_input("> ")
 	if replay == "y":
@@ -135,8 +137,10 @@ def game(player_wins, computer_wins):
 		play_again(player_wins, computer_wins)
 		
 	elif player_choice == "gun":
+		#this plays the suuper shotgun fire sound from DOOM, very important feature
+		winsound.PlaySound('Shotgun.WAV', 1)
 		print "Cheater, cheater pumpkin eater."
-		print "No points for you. :O"
+		print "No points for you!"
 		play_again(player_wins, computer_wins)
 	
 
